@@ -3,14 +3,11 @@ package org.sewatech.java7.coin;
 import java.util.Calendar;
 
 /**
- *
  * @author alexis
+ * @Message 使用 枚举和String 进行Switch
  */
 public class StringInSwitch {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         int month = 0;
         Season season;
@@ -58,8 +55,7 @@ public class StringInSwitch {
         }
 
         switch (headgear) {
-            case "none" :
-                //...
+            case "none":
                 break;
         }
     }

@@ -10,7 +10,6 @@ import java.nio.file.Paths;
 import java.util.List;
 
 /**
- *
  * @author alexis
  */
 public class ReadWriteFile {
@@ -24,7 +23,7 @@ public class ReadWriteFile {
     }
 
     private static void readWithReader() throws IOException {
-        Path sourcePath = Paths.get("src/org/sewatech/java7/nio2/UsingFileStore.java");
+        Path sourcePath = Paths.get("src/main/java/org/sewatech/java7/nio2/UsingFileStore.java");
         try (BufferedReader reader = Files.newBufferedReader(sourcePath, UTF8)) {
             String line = null;
             while ((line = reader.readLine()) != null) {
@@ -32,15 +31,17 @@ public class ReadWriteFile {
             }
         }
     }
+
     private static void readAllLines() throws IOException {
-            Path sourcePath = Paths.get("src/org/sewatech/java7/nio2/UsingFileStore.java");
-            List<String> lines = Files.readAllLines(sourcePath, UTF8);
-            for (String line : lines) {
-                System.out.println(line);
-            }
+        Path sourcePath = Paths.get("src/main/java/org/sewatech/java7/nio2/UsingFileStore.java");
+        List<String> lines = Files.readAllLines(sourcePath, UTF8);
+        for (String line : lines) {
+            System.out.println(line);
+        }
     }
+
     private static void writeWithWriter() throws IOException {
-        Path sourcePath = Paths.get("nothing.txt");
+        Path sourcePath = Paths.get("src/main/resources/nothing.txt");
         String content = "line 1\nline 2\nline 3";
         try (BufferedWriter writer = Files.newBufferedWriter(sourcePath, UTF8)) {
             writer.write(content);

@@ -6,14 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- *
  * @author alexis
  */
 public class TryWithResources {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         //mainOld(args);
         mainNew(args);

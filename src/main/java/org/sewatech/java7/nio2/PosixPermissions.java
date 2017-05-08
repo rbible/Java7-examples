@@ -18,13 +18,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- *
  * @author alexis
  */
 public class PosixPermissions {
 
     public static void main(String... args) throws IOException {
-        Path projectPath = Paths.get(".").toAbsolutePath().normalize();
+        Path projectPath = Paths.get("src/main/resources/").toAbsolutePath().normalize();
         Path manifestPath = projectPath.resolve("manifest.mf");
 
         UserPrincipal fileOwner = Files.getOwner(manifestPath);
@@ -37,16 +36,16 @@ public class PosixPermissions {
 
         Set<PosixFilePermission> permissions = attributes.permissions();
         System.out.println(PosixFilePermissions.toString(permissions));
-        
+
         Set<PosixFilePermission> newPermissions = PosixFilePermissions.fromString("rw-r--r--");
         Files.setPosixFilePermissions(manifestPath, newPermissions);
 
-        PosixFilePermission[] permissionsArray 
-                = {PosixFilePermission.OWNER_READ, 
-                   PosixFilePermission.OWNER_WRITE,
-                   PosixFilePermission.GROUP_READ,
-                   //PosixFilePermission.GROUP_WRITE,
-                   PosixFilePermission.OTHERS_READ};
+        PosixFilePermission[] permissionsArray
+                = {PosixFilePermission.OWNER_READ,
+                PosixFilePermission.OWNER_WRITE,
+                PosixFilePermission.GROUP_READ,
+                //PosixFilePermission.GROUP_WRITE,
+                PosixFilePermission.OTHERS_READ};
         newPermissions = new HashSet<>(Arrays.asList(permissionsArray));
         Files.setPosixFilePermissions(manifestPath, newPermissions);
 

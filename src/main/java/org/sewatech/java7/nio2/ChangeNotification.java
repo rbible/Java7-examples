@@ -1,6 +1,7 @@
 package org.sewatech.java7.nio2;
 
 import static java.nio.file.StandardWatchEventKinds.*;
+
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -30,7 +31,6 @@ public class ChangeNotification {
         }
 
         key.cancel();
-        // ou
         watcher.close();
     }
 }

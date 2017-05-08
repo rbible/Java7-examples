@@ -15,7 +15,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 public class PathMatcherVisitor extends SimpleFileVisitor<Path> {
 
     private static final Path EMPTY_PATH = Paths.get("");
-    
+
     private final PathMatcher matcher;
 
     public PathMatcherVisitor(PathMatcher matcher) {

@@ -7,6 +7,9 @@
     <groupId>org.wewatech</groupId>
     <artifactId>java7</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <name>java7</name>
+    <packaging>jar</packaging>
+
     <build>
         <plugins>
             <plugin>
@@ -19,6 +22,5 @@
             </plugin>
         </plugins>
     </build>
-    <packaging>pom</packaging>
-    <name>java7</name>
+
 </project>

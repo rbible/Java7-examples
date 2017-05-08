@@ -3,7 +3,6 @@ package org.sewatech.java7.nio2;
 import java.io.File;
 
 /**
- *
  * @author alexis
  */
 public class OldFashionFile {
@@ -14,6 +13,7 @@ public class OldFashionFile {
     }
 
     private static void printDirectoryContent(String path) {
+        System.out.println("\n content : ");
         File defaultDir = new File(path);
         System.out.println(defaultDir.getAbsolutePath());
         File[] children = defaultDir.listFiles();
@@ -28,6 +28,7 @@ public class OldFashionFile {
     }
 
     private static void printRoots() {
+        System.out.println("\n roots:");
         File[] roots = File.listRoots();
         for (File root : roots) {
             System.out.println(root.getAbsolutePath());

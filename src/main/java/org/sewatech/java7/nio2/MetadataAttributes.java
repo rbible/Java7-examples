@@ -10,7 +10,6 @@ import java.nio.file.attribute.DosFileAttributes;
 import java.nio.file.attribute.FileTime;
 
 /**
- *
  * @author alexis
  */
 public class MetadataAttributes {
@@ -18,7 +17,7 @@ public class MetadataAttributes {
     public static void main(String... args) throws IOException {
         Path projectPath = Paths.get(".");
 
-        Path jarPath = projectPath.resolve("dist").resolve("Java7Examples.jar").normalize().toAbsolutePath();
+        Path jarPath = projectPath.resolve("target").resolve("Java7-0.0.1-SNAPSHOT.jar").normalize().toAbsolutePath();
         System.out.println("jarPath : " + jarPath);
 
         BasicFileAttributes jarBasicAttrs = Files.readAttributes(jarPath, BasicFileAttributes.class);
@@ -27,11 +26,12 @@ public class MetadataAttributes {
 
         BasicFileAttributeView jarBasicAttrView = Files.getFileAttributeView(jarPath, BasicFileAttributeView.class);
         jarBasicAttrView.setTimes(FileTime.fromMillis(0), FileTime.fromMillis(0), FileTime.fromMillis(0));
-        
-        DosFileAttributes jarDosAttrs = Files.readAttributes(jarPath, DosFileAttributes.class);
-        System.out.println("isReadOnly is " + jarDosAttrs.isReadOnly());
-        System.out.println("isHidden is " + jarDosAttrs.isHidden());
-        System.out.println("isArchive is " + jarDosAttrs.isArchive());
-        System.out.println("isSystem is " + jarDosAttrs.isSystem());
+
+        // mac exception
+//        DosFileAttributes jarDosAttrs = Files.readAttributes(jarPath, DosFileAttributes.class);
+//        System.out.println("isReadOnly is " + jarDosAttrs.isReadOnly());
+//        System.out.println("isHidden is " + jarDosAttrs.isHidden());
+//        System.out.println("isArchive is " + jarDosAttrs.isArchive());
+//        System.out.println("isSystem is " + jarDosAttrs.isSystem());
     }
 }

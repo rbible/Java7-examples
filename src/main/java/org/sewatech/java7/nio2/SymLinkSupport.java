@@ -10,15 +10,14 @@ import java.nio.file.attribute.DosFileAttributes;
 import java.nio.file.attribute.FileTime;
 
 /**
- *
  * @author alexis
  */
 public class SymLinkSupport {
 
-    public static void main(String... args) throws IOException {        
+    public static void main(String... args) throws IOException {
         Path projectPath = Paths.get(".");
 
-        Path docPath = Paths.get("nio-doc");
+        Path docPath = Paths.get("src/main/resources/nio-doc");
         System.out.println("docPath : " + docPath.toAbsolutePath());
         Path docRealPath = docPath.toRealPath();
         System.out.println("docRealPath : " + docRealPath);
@@ -32,6 +31,6 @@ public class SymLinkSupport {
         System.out.println(" and is sym link : " + Files.isSymbolicLink(docPath));
 
         System.out.println("Real path : " + Files.readSymbolicLink(docPath));
-        
+
     }
 }

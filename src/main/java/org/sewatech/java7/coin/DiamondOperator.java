@@ -5,14 +5,12 @@ import java.util.List;
 
 /**
  * @author alexis
+ * @Message 泛型声明，只在引用中指明类型，实例化时<>类型省略
  */
 public class DiamondOperator {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        List<MyClass> maListeOld = new ArrayList<MyClass>();
-        List<MyClass> maListeNew = new ArrayList<>();
+        List<String> maListeOld = new ArrayList<String>();
+        List<String> maListeNew = new ArrayList<>();
     }
 }
